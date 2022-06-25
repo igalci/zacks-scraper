@@ -1,1 +1,1 @@
-from scraper import Scraper as zacks_scraper 
+from zacks_scraper.scraper import Scraper
