@@ -77,8 +77,8 @@ class Scraper():
                 temp_dict[DATE_REPORTED] = self.__str_to_date(entry[DATE_REPORTED_POS])
             if REPORT_TIME not in temp_dict.keys() or temp_dict[REPORT_TIME] is None:
                 temp_dict[REPORT_TIME] = self.__after_hours(entry[REPORT_TIME_POS])
-            temp_dict[REVENUE_ESTIMATE] = self.__str_to_num(entry[ESTIMATE_POS],0)
-            temp_dict[REVENUE_ACTUAL] = self.__str_to_num(entry[ACTUAL_POS],0)
+            temp_dict[REVENUE_ESTIMATE] = self.__str_to_num(entry[ESTIMATE_POS])
+            temp_dict[REVENUE_ACTUAL] = self.__str_to_num(entry[ACTUAL_POS])
             final[period_end]=temp_dict
             #print(final[period_end])
         return final
