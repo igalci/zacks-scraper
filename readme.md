@@ -1,1 +1,3 @@
-Zacks earnings scraper
+# zacks-scraper
+
+Scrapes the zacks.com earnings tables.
