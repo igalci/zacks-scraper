@@ -80,7 +80,7 @@ class Scraper():
             temp_dict[REVENUE_ESTIMATE] = self.__str_to_num(entry[ESTIMATE_POS],0)
             temp_dict[REVENUE_ACTUAL] = self.__str_to_num(entry[ACTUAL_POS],0)
             final[period_end]=temp_dict
-            print(final[period_end])
+            #print(final[period_end])
 
 
     def __script_to_json(self,script):
@@ -125,10 +125,10 @@ class Scraper():
             return None
             
 
-scrape = Scraper("rivn")
-#print(json.dumps(scrape.get(), indent=4))
+# scrape = Scraper("rivn")
+# #print(json.dumps(scrape.get(), indent=4))
 
-# f = open('data.json', 'w')
-# f.write(str(json.dumps(scrape.get(), indent=4)))
+# # f = open('data.json', 'w')
+# # f.write(str(json.dumps(scrape.get(), indent=4)))
 
-scrape.get()
+# scrape.get()
