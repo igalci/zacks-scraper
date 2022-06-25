@@ -81,6 +81,7 @@ class Scraper():
             temp_dict[REVENUE_ACTUAL] = self.__str_to_num(entry[ACTUAL_POS],0)
             final[period_end]=temp_dict
             #print(final[period_end])
+        return final
 
 
     def __script_to_json(self,script):
