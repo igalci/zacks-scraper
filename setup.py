@@ -6,7 +6,7 @@ setup(
     author='Igal',
     author_email='igal8k@gmail.com',
     packages=['src'],
-    package_dir={'zacks-scraper':'src'},
+    package_dir={'':'zacks-scraper'},
     version='0.1',
     license='Apache',
     )
