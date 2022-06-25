@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='zacks_scraper',
+    name='zacks-scraper',
     url='https://github.com/igalci/zacks-scraper',
     author='Igal',
     author_email='igal8k@gmail.com',
