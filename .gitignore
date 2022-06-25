@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #Custom
 *.pk
 *.json
@@ -132,8 +131,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-=======
-*.pk
-*.json
-__pycache__
->>>>>>> master
+
