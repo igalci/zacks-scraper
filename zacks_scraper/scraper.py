@@ -1,7 +1,8 @@
-import requests, json, pickle
+import requests, json
 from bs4 import BeautifulSoup
 from datetime import datetime
 from decimal import Decimal
+#import pickle
 
 #Mimic Firefox browser
 HEADERS = {'Host':'www.zacks.com','Accept-Language':'en-US,en;q=0.5','Accept-Encoding':'gzip, deflate, br',
@@ -35,13 +36,14 @@ class Scraper():
 
     def get(self):
         url="https://www.zacks.com/stock/research/"+self.ticker+"/earnings-calendar"
-        filename = 'zacks-website-test.pk'
         
         data = requests.get(url,headers=HEADERS)
         data = data.text
-        with open(filename, 'wb') as fi:
-            # dump your data into the file
-            pickle.dump(data, fi)
+        
+        #filename = 'zacks-website-test.pk'
+        # with open(filename, 'wb') as fi:
+        #     # dump your data into the file
+        #     pickle.dump(data, fi)
         # with open(filename, 'rb') as fi:
         #     data = pickle.load(fi)
 
@@ -103,17 +105,17 @@ class Scraper():
         if num == None:
             return None
         num=num.replace(" ","").replace(",","").replace("$","").replace("%","")
-        if rounding_digits == 0:
-            try:
-                num=int(Decimal(num))
-            except:
-                return None
-        else:
+        if rounding_digits != 0:
             try:
                 num=Decimal(num)
             except:
                 return None
             num=round(num,rounding_digits)
+        else: #if rounding_digits == 0, return an int, not currently used
+            try:
+                num=int(Decimal(num))
+            except:
+                return None
         return num
 
     def __after_hours(self,announcement_time):
